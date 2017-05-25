@@ -1,35 +1,54 @@
+"""
+PyPy tutorial by Andrew Brown
+example2.py - BF interpreter in RPython, translatable by PyPy
+
+"""
+
 import os
 import sys
 
+
 def mainloop(program, bracket_map):
-    tape = Tape()
     pc = 0
+    tape = Tape()
+    
     while pc < len(program):
+
         code = program[pc]
 
         if code == ">":
             tape.advance()
+
         elif code == "<":
             tape.devance()
+
         elif code == "+":
             tape.inc()
+
         elif code == "-":
             tape.dec()
+
         elif code == ".":
-            sys.stdout.write(chr(tape.get()))
+            # print
+            os.write(1, chr(tape.get()))
+
         elif code == ",":
-            tape.set(ord(sys.stdin.read(1)))
+            # read from stdin
+            tape.set(ord(os.read(0, 1)[0]))
+
         elif code == "[" and tape.get() == 0:
             # Skip forward to the matching ]
             pc = bracket_map[pc]
+
         elif code == "]" and tape.get() != 0:
-            # Skip back to che matching [
+            # Skip back to the matching [
             pc = bracket_map[pc]
 
         pc += 1
 
 
 class Tape(object):
+
     def __init__(self):
         self.thetape = [0]
         self.position = 0

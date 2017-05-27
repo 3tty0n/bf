@@ -10,6 +10,11 @@ jitdriver = JitDriver(greens=['pc', 'program', 'bracket_map'],
                       reds=['tape'],
                       get_printable_location=get_location)
 
+
+def get_matching_bracket(bracket_map, pc):
+    return bracket_map[pc]
+
+
 def mainloop(program, bracket_map):
     pc = 0
     tape = Tape()
@@ -34,10 +39,10 @@ def mainloop(program, bracket_map):
             tape.set(ord(os.read(0, 1)[0]))
         elif code == "[" and tape.get() == 0:
             # Skip forward to the matching ]
-            pc = bracket_map[pc]
+            pc = get_matching_bracket(bracket_map, pc)
         elif code == "]" and tape.get() != 0:
             # Skip back to the matching [
-            pc = bracket_map[pc]
+            pc = get_matching_bracket(bracket_map, pc)
         pc += 1
 
 

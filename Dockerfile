@@ -20,7 +20,8 @@ RUN cd tmp \
     && ln -s /tmp/pypy-5.1.1-linux64/bin/pypy /usr/local/bin/pypy
 
 RUN cd /tmp \
-    && wget -q -O - https://bitbucket.org/pypy/pypy/downloads/pypy-5.1.1-src.tar.bz2 | tar jx
+    && wget -q -O - https://bitbucket.org/pypy/pypy/downloads/pypy-5.1.1-src.tar.bz2 | tar jx \
+    && ln -s /tmp/pypy-5.1.1-src/rpython/bin/rpython /usr/local/bin/rpython
 
 RUN pip install pytest \
     && pip install pytest-cov \

@@ -27,3 +27,7 @@ RUN pip install pytest \
     && pip install pytest-cov \
     && pip install flake8 \
     && pip install mock
+
+COPY example/mandel.b /tmp
+COPY bf1.py /tmp
+COPY bf2.py /tmp

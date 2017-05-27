@@ -11,4 +11,4 @@ python pypy/rpython/bin/rpython <filename>.py
 
 ## Notice
 
-- PyPy: version 5.7.1
+- PyPy: version 5.1.1

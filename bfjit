@@ -1,2 +1,2 @@
 #!/bin/sh
-python ./pypy/rpython/bin/rpython -Ojit bf3.py
+python ./pypy-5.1.1-src/rpython/bin/rpython -Ojit bf3.py

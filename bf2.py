@@ -1,9 +1,3 @@
-"""
-PyPy tutorial by Andrew Brown
-example2.py - BF interpreter in RPython, translatable by PyPy
-
-"""
-
 import os
 import sys
 

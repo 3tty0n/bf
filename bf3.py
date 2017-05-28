@@ -1,12 +1,12 @@
-import os
-import sys
+import os, sys
 
-from rpython.rlib.jit import JitDriver
+from rpython.rlib import jit
 
 def get_location(pc, program, bracket_map):
     return "%s_%s_%s" %  (program[:pc], program[pc], program[pc+1:])
 
-jitdriver = JitDriver(greens=['pc', 'program', 'bracket_map'], 
+
+jitdriver = jit.JitDriver(greens=['pc', 'program', 'bracket_map'], 
                       reds=['tape'],
                       get_printable_location=get_location)
 

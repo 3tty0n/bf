@@ -1,12 +1,10 @@
 # bf interpreter
 
-see: https://morepypy.blogspot.jp/2011/04/tutorial-writing-interpreter-with-pypy.html
-
 ## How to run
 
 ``` bash
-python pypy/rpython/bin/rpython <filename>.py
-./<filename>-c example/<example filename>
+ pypy/rpython/bin/rpython -Ojit bf3.py
+./bf3-c example/mandel.b
 ```
 
 ## Notice

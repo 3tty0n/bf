@@ -3,7 +3,7 @@
 ## How to run
 
 ``` bash
-pypy/rpython/bin/rpython -Ojit bf3.py
+python pypy/rpython/bin/rpython -Ojit bf3.py
 ./bf3-c example/mandel.b
 ```
 

@@ -1,4 +1,4 @@
-FROM micchon/rpython
+FROM micchon/rpython:5.1.1
 
 MAINTAINER Yusuke Izawa <yuizalp@gmail.com>
 
